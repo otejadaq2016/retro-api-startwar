@@ -1,0 +1,40 @@
+{
+  "name": "reto-indra-startwars",
+  "version": "1.0.0",
+  
+  "description": "",
+  "main": "index.js",  
+  "scripts": {
+    "start": "serverless offline start --stage=DEV --region=us-east-1",
+    "clean": "rimraf reports",
+    "pretest": "npm run clean",
+    "test": "jest --passWithNoTests",
+    "test:unit": "npm test -- test/unit",
+    "test:coverage": "npm test -- --coverage --detectOpenHandles",
+    "test:coverage:unit": "npm run test:unit -- --coverage --detectOpenHandles",
+    "test:coverage:integration": "npm run test:integration -- --coverage --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.892.0",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-uuid": "^1.4.8",
+    "serverless-dynamodb-local": "^0.2.30",
+    "serverless-http": "^2.7.0",
+    "serverless-offline": "^6.9.0",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "jest-extended": "^0.11.5",
+    "jest-html-reporter": "^3.3.0",
+    "jest-html-reporters": "^2.1.4",
+    "rimraf": "^3.0.2",
+    "sinon": "^10.0.0"
+  }
+}
